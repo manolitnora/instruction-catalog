@@ -53,6 +53,8 @@ This is not optional. Follow these rules on EVERY turn, not just at session star
 
 **Memory decay:** Add `last_used: YYYY-MM-DD` when saving. Update `last_used` when recalling. At 50 cap, evict oldest `last_used`.
 
+**Feedback loop:** After completing any task, if multiple memories were recalled or created, call signal.coactivation() with the memory IDs that were relevant together. This strengthens associations in the attractor network so future recall gets smarter over time.
+
 **Rules:** Merge by topic (never per-session files). Cap at 50 entries. Never save secrets. New entries: auto-save. Modifying/removing existing: show change, wait for approval.
 
 ## Sovereignty Check
