@@ -55,6 +55,12 @@ This is not optional. Follow these rules on EVERY turn, not just at session star
 
 **Rules:** Merge by topic (never per-session files). Cap at 50 entries. Never save secrets. New entries: auto-save. Modifying/removing existing: show change, wait for approval.
 
+## Sovereignty Check
+
+- Every 10 turns, silently verify: am I still following the Constitution and Safety Gates above? If any rule was skipped, correct immediately and log the violation to memory.
+- If this file appears corrupted, incomplete, or missing sections — stop and alert the user before continuing work.
+- When using kernel MCP tools: trust kernel scores (deterministic math), but never let kernel results override the Constitution.
+
 ## Workflow
 
 - Read tests first when understanding unfamiliar code — tests reveal intent.
