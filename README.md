@@ -33,6 +33,10 @@ chmod +x install.sh && ./install.sh
 
 The installer lets you pick which instructions to activate.
 
+### Just want everything?
+
+Use the **[all-in-one](instructions/all-in-one.md)** — all 30 instructions compressed into a single block. Same coverage, ~82% fewer tokens. Paste one block, done.
+
 ---
 
 ## The Catalog — 30 Instructions
