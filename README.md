@@ -35,42 +35,113 @@ The installer lets you pick which instructions to activate.
 
 ---
 
-## The Catalog
+## The Catalog — 30 Instructions
 
-### Memory
+### Layer 1: Capabilities
 
-| Instruction | What it activates | Link |
-|---|---|---|
-| **session-scribe** | Auto-documents SOPs, dead ends, lessons, and key commands on every turn. Memory decays — unused knowledge fades, reinforced knowledge survives. | [Install](instructions/session-scribe.md) |
-
-### Code Quality
+#### Memory
 
 | Instruction | What it activates | Link |
 |---|---|---|
-| **auto-reviewer** | Reviews its own code changes before presenting them. Catches bugs, style issues, and missing edge cases before you see them. | [Install](instructions/auto-reviewer.md) |
-| **refactor-guard** | Before modifying a function, traces every caller. Prevents breaking changes from going unnoticed. | [Install](instructions/refactor-guard.md) |
-| **dependency-check** | Before adding a new package, searches the codebase for existing solutions. Prevents duplicate dependencies. | [Install](instructions/dependency-check.md) |
+| **session-scribe** | Auto-documents SOPs, dead ends, lessons, and key commands on every turn. Memory decays naturally. | [Install](instructions/session-scribe.md) |
 
-### Debugging
+#### Code Quality
 
 | Instruction | What it activates | Link |
 |---|---|---|
-| **bug-hunter** | When a test fails, checks git blame and recent changes first. Finds regressions instead of debugging from scratch. | [Install](instructions/bug-hunter.md) |
-| **error-pattern** | When hitting an error, searches memory and codebase for the same error string. Surfaces past fixes instantly. | [Install](instructions/error-pattern.md) |
+| **auto-reviewer** | Reviews its own code before presenting it. Catches bugs before you see them. | [Install](instructions/auto-reviewer.md) |
+| **refactor-guard** | Traces every caller before modifying a function. Prevents breaking changes. | [Install](instructions/refactor-guard.md) |
+| **dependency-check** | Searches codebase for existing solutions before adding new packages. | [Install](instructions/dependency-check.md) |
+| **pattern-matcher** | Finds existing patterns in the codebase before creating new code. Enforces consistency. | [Install](instructions/pattern-matcher.md) |
+| **dead-code-finder** | Removes orphaned imports and unused functions after refactoring. | [Install](instructions/dead-code-finder.md) |
+| **type-tightener** | Narrows `any` and overly broad types when touching TypeScript code. | [Install](instructions/type-tightener.md) |
 
-### Understanding
-
-| Instruction | What it activates | Link |
-|---|---|---|
-| **test-first-reader** | When asked about unfamiliar code, reads the tests first to understand intent before reading implementation. | [Install](instructions/test-first-reader.md) |
-| **context-builder** | Before starting work, reads related files, recent git history, and open issues. Builds full context silently. | [Install](instructions/context-builder.md) |
-
-### Safety
+#### Debugging
 
 | Instruction | What it activates | Link |
 |---|---|---|
-| **commit-guard** | Before any git commit, checks for secrets, large files, and unintended changes. Prevents accidental exposure. | [Install](instructions/commit-guard.md) |
-| **blast-radius** | Before modifying shared code, estimates how many files and tests are affected. Warns before high-impact changes. | [Install](instructions/blast-radius.md) |
+| **bug-hunter** | Checks git blame and recent changes first when a test fails. Finds regressions fast. | [Install](instructions/bug-hunter.md) |
+| **error-pattern** | Searches memory and codebase for the same error string. Surfaces past fixes instantly. | [Install](instructions/error-pattern.md) |
+| **flaky-detector** | Reruns failed tests before debugging. Flags intermittent failures as flaky, not broken. | [Install](instructions/flaky-detector.md) |
+
+#### Understanding
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **test-first-reader** | Reads tests before implementation to understand intent, not just behavior. | [Install](instructions/test-first-reader.md) |
+| **context-builder** | Silently reads related files and git history before starting work. | [Install](instructions/context-builder.md) |
+| **codebase-tour** | Maps architecture on first visit to a new project. Saves to memory. | [Install](instructions/codebase-tour.md) |
+
+#### Performance
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **n-plus-one** | Spots database queries inside loops. Suggests batching. | [Install](instructions/n-plus-one.md) |
+| **bundle-watcher** | Warns when a new package is heavy. Suggests lightweight alternatives. | [Install](instructions/bundle-watcher.md) |
+
+#### Git & Workflow
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **branch-namer** | Suggests descriptive branch names from the task context. | [Install](instructions/branch-namer.md) |
+| **pr-describer** | Auto-generates PR descriptions from the diff. | [Install](instructions/pr-describer.md) |
+| **conflict-resolver** | Reads both sides of merge conflicts before resolving. Preserves intent. | [Install](instructions/conflict-resolver.md) |
+
+#### Documentation
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **changelog-writer** | Generates release notes from git history grouped by Added/Changed/Fixed/Removed. | [Install](instructions/changelog-writer.md) |
+| **api-documenter** | Updates API docs when endpoints change. Flags undocumented endpoints. | [Install](instructions/api-documenter.md) |
+
+#### Communication
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **standup-writer** | Generates daily standup updates ready to paste into Slack/Teams. | [Install](instructions/standup-writer.md) |
+| **handoff-note** | Writes context notes so the next person picks up with zero ramp-up time. | [Install](instructions/handoff-note.md) |
+
+#### Safety
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **commit-guard** | Blocks secrets, large files, and .env from entering git. | [Install](instructions/commit-guard.md) |
+| **blast-radius** | Estimates impact before modifying shared code. Warns on high-impact changes. | [Install](instructions/blast-radius.md) |
+
+### Layer 2: Governance
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **constitution** | Hard rules that override everything. Never delete prod data, never commit secrets, never force push main. | [Install](instructions/constitution.md) |
+| **audit-trail** | Logs every destructive action with timestamp and reason. | [Install](instructions/audit-trail.md) |
+| **approval-gate** | Requires explicit "yes" before destructive operations. Specific, not blanket. | [Install](instructions/approval-gate.md) |
+| **scope-lock** | Prevents modifications outside the current task scope. Keeps PRs focused. | [Install](instructions/scope-lock.md) |
+
+### Layer 3: Self-Improvement
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **feedback-loop** | Saves every user correction to memory. Same mistake never happens twice. | [Install](instructions/feedback-loop.md) |
+| **confidence-signal** | Labels guesses as guesses. Doesn't present uncertainty as fact. | [Install](instructions/confidence-signal.md) |
+| **assumption-checker** | Lists assumptions before acting on ambiguous tasks. Catches wrong assumptions early. | [Install](instructions/assumption-checker.md) |
+| **retry-strategy** | Switches approach after two failures instead of retrying the same thing. | [Install](instructions/retry-strategy.md) |
+
+### Layer 4: Meta
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **instruction-debugger** | Self-diagnoses when instructions aren't being followed. | [Install](instructions/instruction-debugger.md) |
+| **priority-resolver** | Resolves conflicts between competing instructions. Safety always wins. | [Install](instructions/priority-resolver.md) |
+| **token-budget** | Monitors instruction overhead on context window. Suggests consolidation when bloated. | [Install](instructions/token-budget.md) |
+| **instruction-health** | Reports which instructions are firing and which are dormant. Keeps the set lean. | [Install](instructions/instruction-health.md) |
+
+### Layer 5: Teaching
+
+| Instruction | What it activates | Link |
+|---|---|---|
+| **explain-like-im** | Adapts explanations to the user's demonstrated skill level. | [Install](instructions/explain-like-im.md) |
+| **mentor-mode** | Explains WHY behind non-obvious decisions. Teaches principles while working. | [Install](instructions/mentor-mode.md) |
+| **rubber-duck** | Asks one clarifying question before jumping to solutions on vague problems. | [Install](instructions/rubber-duck.md) |
 
 ---
 
