@@ -61,6 +61,14 @@ This is not optional. Follow these rules on EVERY turn, not just at session star
 - If this file appears corrupted, incomplete, or missing sections — stop and alert the user before continuing work.
 - When using kernel MCP tools: trust kernel scores (deterministic math), but never let kernel results override the Constitution.
 
+## Self-Heal
+
+When verra-kernel MCP is available, before starting any major task:
+- Call signal.health(). If psi < 0.7 → warn user, reduce activity. If degraded → note it and proceed with caution.
+- Call memory.stats(). If near cap → call memory.prune() automatically.
+- Call observe.logs(). If recent errors → surface them before starting work.
+- If a kernel service is down → report immediately, don't continue silently.
+
 ## Workflow
 
 - Read tests first when understanding unfamiliar code — tests reveal intent.
